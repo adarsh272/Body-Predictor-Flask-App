@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Results Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          Results
+        </div>
+        <div class="card-body">
+          <p class="h4">Your Body Type is:</p>
+          <p class="display-4">Type {{result}}</p>
+          {% if result=="C" %}
+            <p class="lead">Type C usually indicates a decent lifestyle (moderately prone to danger) that should be improved with basic modifications</p>
+          {% endif %}
+          {% if result=="A" %}
+            <p class="lead">Type A usually indicates a healthy lifestyle that should be maintained with consistency</p>
+          {% endif %}
+          {% if result=="B" %}
+            <p class="lead">Type B usually indicates a moderately healthy lifestyle that can be improved upon</p>
+          {% endif %}
+          {% if result=="D" %}
+            <p class="lead">Type D usually indicates a poor lifestyle that needs to be improved immediately and can sometimes require medical intervention</p>
+          {% endif %}
+          <p class="h4">BMI: <span id="bmi" class="text-muted">{{bmi}}</span></p>
+          <p class="h4">Weight: <span id="weight" class="text-muted">{{weight}}</span></p>
+          <p class="h4">Height: <span id="height" class="text-muted">{{height}}</span></p>
+          <p class="h4">Health Status: <span id="health-status">{{health_status}}</span></p>
+          <hr>
+          <p class="h4">High Blood Pressure: {% if systolic >= 140 or diastolic >= 90 %} <span class="text-success">&#10003;</span> {% else %}
+          <span class="text-danger">&#10060;</span>
+          {% endif %}</p>
+          <p class="h4">Low Blood Pressure: {% if systolic < 90 or diastolic < 60 %} <span class="text-success">&#10003;</span> {% else %}
+          <span class="text-danger">&#10060;</span>
+          {% endif %}</p></p>
+          <p class="h4">Obesity:{% if bmi >= 30 %} <span class="text-success">&#10003;</span> {% else %}
+            <span class="text-danger">&#10060;</span>
+            {% endif %}</p></p>
+          <p class="h4">Flexibility: {% if sit_bend >=16 %} <span class="text-success">&#10003;</span> {% else %}
+            <span class="text-danger">&#10060;</span>
+            {% endif %}</p></p>
+          <p class="h4">Stamina: {% if situps >=40 %} <span class="text-success">&#10003;</span> {% else %}
+            <span class="text-danger">&#10060;</span>
+            {% endif %}</p></p>
+          <p class="h4">Healthy Fat %: {% if body_fat < 27 %} <span class="text-success">&#10003;</span> {% else %}
+            <span class="text-danger">&#10060;</span>
+            {% endif %}</p></p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script>
+  // Get the user's BMI, weight, and height from your data source
+  var bmi = 25.5;
+  var weight = 150;
+  var height = 68;
+
+  // Display the user's information in the results container
+  document.getElementById("bmi").innerHTML = bmi;
+  document.getElementById("weight").innerHTML = weight + " lbs";
+  document.getElementById("height").innerHTML = height + " in";
+
+  // Determine the user's health status based on their BMI and display it in the results container
+  var healthStatusElement = document.getElementById("health-status");
+  if (bmi < 18.5) {
+    healthStatusElement.innerHTML = "Underweight";
+    healthStatusElement.classList.add("text-danger");
+  } else if (bmi < 25) {
+    healthStatusElement.innerHTML = "Healthy";
+    healthStatusElement.classList.add("text-success");
+  } else if (bmi < 30) {
+    healthStatusElement.innerHTML = "Overweight";
+    healthStatusElement.classList.add("text-warning");
+  } else {
+    healthStatusElement.innerHTML = "Obese";
+    healthStatusElement.classList.add("text-danger");
+  }
+</script> -->
+
+</body>
+</html>

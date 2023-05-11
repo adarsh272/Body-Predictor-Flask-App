@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+
+        <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Navbar brand -->
+          <a class="navbar-brand mt-2 mt-lg-0" href="#">
+            <h3 class="text-white">Body Type Predictor </h3>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row justify-content-center ml-5 mt-5">
+        <div class="col-md-10">
+
+          <form method="post" action="/predict">
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" class="form-control" required>
+              </div>
+              <div class="form-group col-md-5">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" class="form-control">
+                  <option value="0">Male</option>
+                  <option value="1">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" class="form-control" step="any" required>
+              </div>
+              <div class="form-group col-md-5">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" class="form-control" step="any" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="body-fat">Body Fat Percentage:</label>
+                <input type="number" id="body-fat" name="body-fat" class="form-control" step="any" required>
+              </div>
+              <div class="form-group col-md-5">
+                <label for="diastolic-bp">Diastolic BP count:</label>
+                <input type="number" id="diastolic-bp" name="diastolic-bp" class="form-control" step="any" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="systolic-bp">Systolic BP count:</label>
+                <input type="number" id="systolic-bp" name="systolic-bp" class="form-control" step="any" required>
+              </div>
+              <div class="form-group col-md-5">
+                <label for="sit-ups">Sit-ups count:</label>
+                <input type="number" id="sit-ups" name="sit-ups" class="form-control" required>
+                <small id="inputFieldHelp" class="form-text text-muted">How many sit-ups can you do in 2 minutes?</small>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="jump-distance">Jump distance (cm):</label>
+                <input type="number" id="jump-distance" name="jump-distance" class="form-control" step="any" required>
+                <small id="inputFieldHelp" class="form-text text-muted">How much distance can you cover with a single jump forward?</small>
+              </div>
+              <div class="form-group col-md-5">
+                <label for="sit-bend-distance">Sit and bend distance (cm):</label>
+                <input type="number" id="sit-bend-distance" name="sit-bend-distance" class="form-control" step="any" required>
+                <small id="inputFieldHelp" class="form-text text-muted">How much distance can you cover while sitting and bending forward with legs in front?</small>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="grip-strength">Grip Strenght (kg):</label>
+                <input type="number" id="grip-strength" name="grip-strength" class="form-control" step="any" required>
+                <small id="inputFieldHelp" class="form-text text-muted">Please enter your grip strength in kilograms</small>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body

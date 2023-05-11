@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .form-container label {
+    display: block;
+  }
+  
+  .form-container input,
+  .form-container select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  
+  
