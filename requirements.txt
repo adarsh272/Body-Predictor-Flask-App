@@ -1,6 +1,6 @@
 flask
 numpy
-sklearn
+scikit-learn
 gdown
 gunicorn==20.0.4
 Werkzeug==2.2.3
