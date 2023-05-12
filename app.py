@@ -1,8 +1,13 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
+import gdown
 
+url = 'https://drive.google.com/uc?id=13Ssu06MYb8Ek1_bTZPNwZTP6tL7wv-UV'
+output = 'model.pkl'
+gdown.download(url, output, quiet=False)
 model = pickle.load(open('model.pkl', 'rb'))
+
 
 app = Flask(__name__)
 
